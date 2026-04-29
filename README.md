@@ -47,12 +47,15 @@ Project ini dirancang untuk menyederhanakan proses evaluasi data tanpa perlu pen
 
 ## 🚀 How to Use
 
-1. Buat Google Form sebagai input data
+1. Buat Google Form sebagai input data 
+    klik link ini untuk membuka gform BOS Check buatan saya https://s.id/BOScheck
 2. Hubungkan Form ke Google Spreadsheet
+    nantinya file jawaban dari link BOS Check akan masuk ke dalam "BOS Check  Skala Linier 5 Bagian (Jawaban)"
 3. Buka Apps Script dari Spreadsheet
 4. Copy script dari project ini ke editor GAS
 5. Setup trigger (misalnya: On Form Submit)
 6. Jalankan dan cek hasil di Spreadsheet
+    hasil berupa file pdf akan muncul di folder hasil yang sudah disiapkan sebelumnya dalam file tamplate, secara otomatis
 
 ## 📊 Example Use Case
 
