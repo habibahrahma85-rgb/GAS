@@ -1,12 +1,86 @@
-🚀 Automated Assessment System (Google Apps Script)
-Proyek ini adalah solusi otomatisasi alur kerja untuk mengelola hasil asesmen yang dikumpulkan melalui Google Forms. Menggunakan Google Apps Script (GAS), sistem ini secara otomatis memproses data jawaban, melakukan perhitungan skor, dan menghasilkan laporan terstruktur tanpa intervensi manual.
-📝 Deskripsi Proyek
-Dibuat untuk mempercepat proses evaluasi, script ini menghubungkan Google Forms dengan Google Sheets untuk memberikan hasil asesmen secara real-time. Proyek ini sangat berguna untuk tenaga pendidik, HR, atau tim riset yang membutuhkan pengolahan data asesmen yang cepat dan akurat.
-✨ Fitur Utama
-Auto-Scoring: Menghitung nilai atau hasil asesmen secara instan setelah formulir dikirim.
-Data Formatting: Merapikan input mentah dari GForm ke dalam tabel yang siap dipresentasikan.
-Trigger Based: Script berjalan otomatis setiap kali ada respon baru (On Form Submit).
-Custom Notification (Opsional): Dapat dikembangkan untuk mengirim hasil melalui Email/WhatsApp otomatis.
+# 🚀 GAS Automatic Result Assessment
+
+## 📌 Overview
+
+GAS (Automatic Result Assessment) adalah sistem yang dirancang untuk membantu proses penilaian secara otomatis, cepat, dan konsisten. Project ini dibuat untuk mengurangi human error dalam evaluasi serta meningkatkan efisiensi dalam pengolahan hasil.
+
+## 🎯 Objectives
+
+* Mengotomatisasi proses penilaian
+* Mengurangi kesalahan manual (human error)
+* Mempercepat proses evaluasi hasil
+* Memberikan hasil yang konsisten dan terstruktur
+
+## ⚙️ Features
+
+* ✅ Input data hasil (manual / file)
+* ✅ Proses penilaian otomatis berdasarkan kriteria
+* ✅ Output hasil evaluasi yang terstruktur
+* ✅ (Tambahkan fitur spesifik kamu di sini, misalnya: scoring system, grading, dll)
+
+## 🛠️ Tech Stack
+
+* Language: (contoh: Python / JavaScript / PHP)
+* Framework: (jika ada)
+* Database: (MySQL / MongoDB / dll)
+* Tools: (Git, VSCode, dll)
+
+## 📂 Project Structure
+
+```
+├── src/            # Source code utama
+├── data/           # Dataset / input file
+├── docs/           # Dokumentasi tambahan
+├── README.md       # Dokumentasi project
+```
+
+## 🚀 How to Run
+
+1. Clone repository ini
+
+   ```bash
+   git clone https://github.com/username/nama-repo.git
+   ```
+2. Masuk ke folder project
+
+   ```bash
+   cd nama-repo
+   ```
+3. Install dependencies
+
+   ```bash
+   (sesuaikan, misalnya: npm install / pip install -r requirements.txt)
+   ```
+4. Jalankan program
+
+   ```bash
+   (contoh: python main.py / npm start)
+   ```
+
+## 📊 Example Output
+
+(Tambahkan screenshot atau contoh output di sini biar lebih menarik)
+
+## 📈 Future Improvements
+
+* 🔄 Integrasi dengan sistem lain
+* 📊 Visualisasi hasil
+* 🌐 Web-based interface / API
+* 🤖 Pengembangan fitur AI (opsional kalau relevan)
+
+## 🤝 Contributing
+
+Kontribusi sangat terbuka! Silakan fork repo ini dan buat pull request.
+
+## 📄 License
+
+Project ini menggunakan license (MIT / lainnya — sesuaikan)
+
+## 👤 Author
+
+Dibuat oleh [Nama Kamu]
+Sebagai bagian dari portfolio pengembangan sistem & pembelajaran pribadi
+
 🛠️ Teknologi yang Digunakan
 Google Apps Script (JavaScript-based)
 Google Forms (Input Data)
