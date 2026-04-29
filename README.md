@@ -1,4 +1,4 @@
-#🚀 Automated Assessment System (Google Apps Script)#
+🚀 Automated Assessment System (Google Apps Script)
 Proyek ini adalah solusi otomatisasi alur kerja untuk mengelola hasil asesmen yang dikumpulkan melalui Google Forms. Menggunakan Google Apps Script (GAS), sistem ini secara otomatis memproses data jawaban, melakukan perhitungan skor, dan menghasilkan laporan terstruktur tanpa intervensi manual.
 📝 Deskripsi Proyek
 Dibuat untuk mempercepat proses evaluasi, script ini menghubungkan Google Forms dengan Google Sheets untuk memberikan hasil asesmen secara real-time. Proyek ini sangat berguna untuk tenaga pendidik, HR, atau tim riset yang membutuhkan pengolahan data asesmen yang cepat dan akurat.
