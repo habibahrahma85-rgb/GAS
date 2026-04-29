@@ -1,0 +1,86 @@
+function generateOtomatis() {
+   // 1. Minta "Kunci" Antrean (Agar tidak tabrakan di Drive)
+  var lock = LockService.getScriptLock();
+  try {
+    // Tunggu giliran maksimal 30 detik
+    lock.waitLock(30000); 
+
+  // 1. Ganti ID Google DOCS kamu (yang warna biru!)
+  const docId = '14K9g0VrtdphVUBeVLKUYr5vmZzAY8M3muJPQpPzAXNs'; 
+  // 2. Ganti ID Folder buat simpan PDF-nya
+  const folderId = '1xGLkgjwtHh5Xnn6ep1nDt1EnHj9SRkrn';
+  
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName('Form Responses 1'); // Cek nama sheet kamu ya
+  const data = sheet.getDataRange().getValues();
+  const row = data[data.length - 1]; // Ini ngambil baris paling bawah (user terbaru)
+
+  // Buat copy dari template
+  const copy = DriveApp.getFileById(docId).makeCopy(`BOS_Check_Scoring_${row[3]}`, DriveApp.getFolderById(folderId));
+  const doc = DocumentApp.openById(copy.getId());
+  const body = doc.getBody();
+
+  // MAPPING: Sesuaikan {{tag}} sama kolom di Sheets (indeks mulai dari 0)
+  body.replaceText('{{Nama Business Owner}}', row[3]); // kolom D itu Nama
+  body.replaceText('{{#Total}}', row[95]); // Mengganti Total angka
+  
+  // Contoh kalau mau diubah jadi PERSEN (misal 0.28 jadi 28%)
+  const totalPersen = (Number(row[96]) * 100).toFixed(0) + "%";
+  body.replaceText('{{Total}}', totalPersen);
+
+  body.replaceText('{{AB}}', row[27]); // Kolom AB
+
+  // 1. Pastikan rumusnya seperti ini (Indeks kolom disesuaikan ya)
+  const persenAC = (Number(row[28]) * 100).toFixed(0) + "%"; 
+  // 2. Pastikan perintah replace-nya SEBELUM doc.saveAndClose()
+  body.replaceText('{{AC}}', persenAC);
+
+  body.replaceText('{{AS}}', row[44]); // Kolom AS
+
+  // 1. Pastikan rumusnya seperti ini (Indeks kolom disesuaikan ya)
+  const persenAT = (Number(row[45]) * 100).toFixed(0) + "%"; 
+  // 2. Pastikan perintah replace-nya SEBELUM doc.saveAndClose()
+  body.replaceText('{{AT}}', persenAT);
+
+  body.replaceText('{{BJ}}', row[61]); // Kolom BJ
+
+  // 1. Pastikan rumusnya seperti ini (Indeks kolom disesuaikan ya)
+  const persenBK = (Number(row[62]) * 100).toFixed(0) + "%"; 
+  // 2. Pastikan perintah replace-nya SEBELUM doc.saveAndClose()
+  body.replaceText('{{BK}}', persenBK);
+
+  body.replaceText('{{BP}}', row[67]); // Kolom BP
+
+  // 1. Pastikan rumusnya seperti ini (Indeks kolom disesuaikan ya)
+  const persenBQ = (Number(row[68]) * 100).toFixed(0) + "%"; 
+  // 2. Pastikan perintah replace-nya SEBELUM doc.saveAndClose()
+  body.replaceText('{{BQ}}', persenBQ);
+
+  body.replaceText('{{CP}}', row[93]); // Kolom CP
+
+  // 1. Pastikan rumusnya seperti ini (Indeks kolom disesuaikan ya)
+  const persenCQ = (Number(row[94]) * 100).toFixed(0) + "%"; 
+  // 2. Pastikan perintah replace-nya SEBELUM doc.saveAndClose()
+  body.replaceText('{{CQ}}', persenCQ);
+
+  doc.saveAndClose();
+  
+  // Ubah jadi PDF
+  const pdfBlob = copy.getAs(MimeType.PDF);
+  DriveApp.getFolderById(folderId).createFile(pdfBlob);
+  
+  // Hapus copy-an Docs biar gak nyampah (sisain PDF aja)
+  copy.setTrashed(true);
+
+  Utilities.sleep(2000); // Beri jeda 2 detik
+// Baru jalankan kode Drive di baris 93
+  
+  Logger.log("SIAP! PDF udah jadi di folder Drive!");
+
+   } catch (e) {
+    // Jika ada error, catat di log
+    Logger.log("Terjadi Error: " + e.toString());
+  } finally {
+    // 2. LEPAS KUNCI (Wajib supaya orang berikutnya bisa diproses)
+    lock.releaseLock();
+  }
