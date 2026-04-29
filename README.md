@@ -2,89 +2,77 @@
 
 ## 📌 Overview
 
-GAS (Automatic Result Assessment) adalah sistem yang dirancang untuk membantu proses penilaian secara otomatis, cepat, dan konsisten. Project ini dibuat untuk mengurangi human error dalam evaluasi serta meningkatkan efisiensi dalam pengolahan hasil.
+GAS (Automatic Result Assessment) adalah sistem otomatis berbasis Google Apps Script yang digunakan untuk melakukan penilaian hasil secara real-time dari data yang dikumpulkan melalui Google Form dan disimpan di Google Spreadsheet.
+
+Project ini dirancang untuk menyederhanakan proses evaluasi data tanpa perlu pengolahan manual, sehingga lebih cepat, akurat, dan efisien.
 
 ## 🎯 Objectives
 
-* Mengotomatisasi proses penilaian
-* Mengurangi kesalahan manual (human error)
-* Mempercepat proses evaluasi hasil
-* Memberikan hasil yang konsisten dan terstruktur
+* Mengotomatisasi proses penilaian dari Google Form
+* Mengurangi human error dalam evaluasi data
+* Mempercepat pengolahan hasil secara real-time
+* Menghasilkan output yang konsisten dan terstruktur
 
 ## ⚙️ Features
 
-* ✅ Input data hasil (manual / file)
-* ✅ Proses penilaian otomatis berdasarkan kriteria
-* ✅ Output hasil evaluasi yang terstruktur
-* ✅ (Tambahkan fitur spesifik kamu di sini, misalnya: scoring system, grading, dll)
+* 📥 Integrasi langsung dengan Google Form sebagai input data
+* 📊 Penyimpanan otomatis ke Google Spreadsheet
+* ⚡ Pemrosesan data otomatis menggunakan Google Apps Script
+* 🧮 Sistem penilaian berdasarkan kriteria tertentu
+* 📤 Output hasil evaluasi langsung di spreadsheet
+* 📄 FIle siap kirim berupa pdf 
 
 ## 🛠️ Tech Stack
 
-* Language: (contoh: Python / JavaScript / PHP)
-* Framework: (jika ada)
-* Database: (MySQL / MongoDB / dll)
-* Tools: (Git, VSCode, dll)
+* Google Apps Script (GAS)
+* Google Forms
+* Google Sheets
+
+## 🔄 Workflow
+
+1. User mengisi Google Form
+2. Data otomatis masuk ke Google Spreadsheet
+3. Google Apps Script berjalan (trigger otomatis / manual)
+4. Sistem memproses dan menilai data
+5. Hasil penilaian ditampilkan di Spreadsheet
 
 ## 📂 Project Structure
 
 ```
-├── src/            # Source code utama
-├── data/           # Dataset / input file
-├── docs/           # Dokumentasi tambahan
-├── README.md       # Dokumentasi project
+├── Code.gs           # Script utama GAS
+├── Form              # Google Form (external)
+├── Spreadsheet       # Database & hasil output
+├── README.md         # Dokumentasi project
 ```
 
-## 🚀 How to Run
+## 🚀 How to Use
 
-1. Clone repository ini
+1. Buat Google Form sebagai input data
+2. Hubungkan Form ke Google Spreadsheet
+3. Buka Apps Script dari Spreadsheet
+4. Copy script dari project ini ke editor GAS
+5. Setup trigger (misalnya: On Form Submit)
+6. Jalankan dan cek hasil di Spreadsheet
 
-   ```bash
-   git clone https://github.com/username/nama-repo.git
-   ```
-2. Masuk ke folder project
+## 📊 Example Use Case
 
-   ```bash
-   cd nama-repo
-   ```
-3. Install dependencies
-
-   ```bash
-   (sesuaikan, misalnya: npm install / pip install -r requirements.txt)
-   ```
-4. Jalankan program
-
-   ```bash
-   (contoh: python main.py / npm start)
-   ```
-
-## 📊 Example Output
-
-(Tambahkan screenshot atau contoh output di sini biar lebih menarik)
+* Penilaian kuis / ujian otomatis
+* Evaluasi data survey
+* Sistem scoring sederhana untuk seleksi
+* Monitoring performa berdasarkan input form
 
 ## 📈 Future Improvements
 
-* 🔄 Integrasi dengan sistem lain
-* 📊 Visualisasi hasil
-* 🌐 Web-based interface / API
-* 🤖 Pengembangan fitur AI (opsional kalau relevan)
+* 🌐 Dashboard visualisasi (Google Data Studio / Looker)
+* 🔔 Notifikasi otomatis (email / WhatsApp)
+* 🤖 Integrasi AI untuk analisis data lanjutan
+* 🔗 API integration
 
 ## 🤝 Contributing
 
-Kontribusi sangat terbuka! Silakan fork repo ini dan buat pull request.
-
-## 📄 License
-
-Project ini menggunakan license (MIT / lainnya — sesuaikan)
+Kontribusi terbuka untuk pengembangan lebih lanjut. Silakan fork dan pull request.
 
 ## 👤 Author
 
-Dibuat oleh [Nama Kamu]
-Sebagai bagian dari portfolio pengembangan sistem & pembelajaran pribadi
-
-🛠️ Teknologi yang Digunakan
-Google Apps Script (JavaScript-based)
-Google Forms (Input Data)
-Google Sheets (Database & Processing)
-📁 Struktur File
-Code.gs: Berisi logika utama script (pemrosesan data).
-appsscript.json: Manifest file untuk konfigurasi environment GAS.
+Dibuat oleh Habibah Rahma Hayeti
+Sebagai bagian dari portfolio pengembangan sistem berbasis automation
